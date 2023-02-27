@@ -15,6 +15,6 @@ fi
 
 echo ">> Finish checking branch name"
 echo ">> Linting your files and fixing them if needed..."
-
+cd ./packages/ShopyCaller
 yarn type-check
 yarn lint-staged
