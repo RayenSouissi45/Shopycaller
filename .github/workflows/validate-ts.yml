@@ -13,6 +13,9 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     name: Compile TS (tsc)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/ShopyCaller
     steps:
     - uses: actions/checkout@v2
 
@@ -44,6 +47,9 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     name: Lint TS (eslint, prettier)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/ShopyCaller
 
     steps:
       - uses: actions/checkout@v2
