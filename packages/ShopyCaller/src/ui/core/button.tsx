@@ -50,6 +50,7 @@ export const Button = ({
   loading = false,
   variant = 'primary',
   disabled = false,
+  className,
   ...props
 }: Props) => {
   return (
@@ -59,6 +60,7 @@ export const Button = ({
     ${buttonVariants.defaults.container}
      ${buttonVariants[variant].container}
      ${disabled ? 'opacity-50' : ''}
+      ${className}
     `}
       {...props}
     >

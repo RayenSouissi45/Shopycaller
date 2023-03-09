@@ -19,7 +19,7 @@ export interface NInputProps extends TextInputProps {
 }
 
 export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
-  const { label, error, ...inputProps } = props;
+  const { label, error, value, ...inputProps } = props;
 
   const [isFocussed, setIsFocussed] = React.useState(false);
   const onBlur = React.useCallback(() => setIsFocussed(false), []);
@@ -28,30 +28,38 @@ export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
   const borderColor = error
     ? 'border-danger-600'
     : isFocussed
-    ? 'border-neutral-600'
+    ? 'border-CustomizedGreen-10'
     : 'border-neutral-400';
 
   const bgColor = error ? 'bg-danger-50' : 'bg-neutral-200';
   const textDirection = isRTL ? 'text-right' : 'text-left';
   return (
-    <View className="mb-4">
-      {label && (
-        <Text variant="md" className={error ? 'text-danger-600' : 'text-black'}>
-          {label}
-        </Text>
-      )}
+    <View className="mb-4 relative">
       <STextInput
         testID="STextInput"
         ref={ref}
-        placeholderTextColor={colors.neutral[400]}
-        className={`mt-0 border-[1px] py-4 px-2  ${borderColor} rounded-md ${bgColor} text-[16px] ${textDirection}`}
+        placeholderTextColor={colors.grey[10]}
+        className={`mt-0 border-[1px] p-4${borderColor} rounded-md ${bgColor} bg-neutral-200 text-white text-[16px] ${textDirection}`}
         onBlur={onBlur}
         onFocus={onFocus}
+        value={value}
         {...inputProps}
         style={StyleSheet.flatten([
           { writingDirection: isRTL ? 'rtl' : 'ltr' },
         ])}
       />
+      {label && (
+        <Text
+          variant="md"
+          className={`absolute left-4   ${
+            value || isFocussed
+              ? 'top-0 text-CustomizedGreen-10 text-[12px]'
+              : 'top-4 text-grey-10 text-[16px]'
+          }`}
+        >
+          {label}
+        </Text>
+      )}
       {error && <Text variant="error">{error}</Text>}
     </View>
   );

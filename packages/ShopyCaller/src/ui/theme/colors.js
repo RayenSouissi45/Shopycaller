@@ -1,10 +1,17 @@
 module.exports = {
   white: '#ffffff',
   black: '#000000',
+  CustomizedGreen: {
+    10: '#02F387',
+  },
+  grey: {
+    10: '#C4C4C4',
+  },
+  GreyWhite: '#FFFFFF7F',
   neutral: {
-    50: '#FAFAFA',
-    100: '#F5F5F5',
-    200: '#F0EFEE',
+    50: '#EAE8FE',
+    100: '#080F18',
+    200: '#060124',
     300: '#D4D4D4',
     400: '#A3A3A3',
     500: '#737373',
