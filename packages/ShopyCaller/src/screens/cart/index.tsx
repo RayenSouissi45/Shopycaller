@@ -1,10 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
 
 import { ScrollView, Text, View } from '@/ui';
-import FootIcon from '@/ui/components/icons/foot-icon';
-import ParChequeIcon from '@/ui/components/icons/par-cheque-icon';
+import Category from '@/ui/components/category';
 import ProductCardsContainer from '@/ui/components/product-cards-container';
 import TotalOrder from '@/ui/components/total-order';
 
@@ -30,14 +27,6 @@ const Cart = () => {
       description: 'this is the description for product 1',
     },
   ];
-  const [isPressedParCheque, setIsPressed] = useState(false);
-  const handelPressParCheque = () => {
-    setIsPressed(!isPressedParCheque);
-  };
-  const [isPressedEnEspece, setIsPressedEnEspece] = useState(false);
-  const handelPressedEnEspece = () => {
-    setIsPressedEnEspece(!isPressedEnEspece);
-  };
 
   return (
     <View className="bg-neutral-200 relative flex">
@@ -76,60 +65,8 @@ const Cart = () => {
             </Text>
           </View>
           <View className="flex-row justify-center mt-3 ">
-            <TouchableWithoutFeedback
-              onPressIn={handelPressedEnEspece}
-              onPressOut={handelPressedEnEspece}
-            >
-              <View
-                className={`h-[119] w-[89]  mx-2 rounded-xl items-center bg-white ${
-                  isPressedEnEspece
-                    ? 'border-2 border-green-10 bg-espece-50'
-                    : ''
-                }`}
-              >
-                <View
-                  className={`h-[40] w-[40] bg-neutral-50 mt-5 items-center justify-center rounded-lg mb-[14] ${
-                    isPressedEnEspece ? 'bg-white' : ''
-                  }`}
-                >
-                  <FootIcon />
-                </View>
-                <Text
-                  className={`text-black ${
-                    isPressedEnEspece ? 'text-white' : ''
-                  }`}
-                >
-                  En espéce
-                </Text>
-              </View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPressIn={handelPressParCheque}
-              onPressOut={handelPressParCheque}
-            >
-              <View
-                className={`h-[119] w-[89] mx-2 items-center bg-white rounded-xl ${
-                  isPressedParCheque
-                    ? 'bg-espece-50 border-2 border-green-10'
-                    : ''
-                }`}
-              >
-                <View
-                  className={`h-[40] w-[40] bg-neutral-50 mt-5 items-center justify-center rounded-lg mb-[14]  ${
-                    isPressedParCheque ? 'bg-white' : ''
-                  }`}
-                >
-                  <ParChequeIcon />
-                </View>
-                <Text
-                  className={`text-black ${
-                    isPressedParCheque ? 'text-white' : ''
-                  }`}
-                >
-                  Par chéque
-                </Text>
-              </View>
-            </TouchableWithoutFeedback>
+            <Category titleText="En espéce" testx="hello" />
+            <Category titleText="Par chèque" testx="dagla" />
           </View>
         </View>
       </ScrollView>
