@@ -4,11 +4,15 @@ import { View } from '@/ui/core';
 
 import ProductCard from '../product-cards';
 
-const ProductCardsContainer = ({ items }: any) => {
+const ProductCardsContainer = ({ items, deleteOption }: any) => {
   return (
     <View>
       {items.map((product: any, index: number) => (
-        <ProductCard key={index} product={product} />
+        <ProductCard
+          deleteOption={deleteOption}
+          key={index}
+          product={product}
+        />
       ))}
     </View>
   );

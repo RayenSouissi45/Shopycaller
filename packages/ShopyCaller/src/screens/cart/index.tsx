@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ScrollView, Text, View } from '@/ui';
-import Category from '@/ui/components/category';
+import CategoryProductsContainer from '@/ui/components/category-product-container';
 import ProductCardsContainer from '@/ui/components/product-cards-container';
 import TotalOrder from '@/ui/components/total-order';
 
@@ -27,6 +27,14 @@ const Cart = () => {
       description: 'this is the description for product 1',
     },
   ];
+  const methodofpayment = [
+    {
+      name: 'En Espèce',
+    },
+    {
+      name: 'Par chèque',
+    },
+  ];
 
   return (
     <View className="bg-neutral-200 relative flex">
@@ -38,10 +46,10 @@ const Cart = () => {
           <Text className="text-white opacity-50 text-left text-sm pt-2  pl-8 ">
             Validation de panier
           </Text>
-          <View className="border-y border-white mt-5">
+          <View className="border-y border-grey-10 mt-5">
             <View className=" py-5 mt-3 ml-5">
               <Text className="text-white text-lg">Produits </Text>
-              <ProductCardsContainer items={products} />
+              <ProductCardsContainer items={products} deleteOption={true} />
             </View>
           </View>
         </View>
@@ -64,14 +72,15 @@ const Cart = () => {
               Méthode de paiement
             </Text>
           </View>
-          <View className="flex-row justify-center mt-3 ">
-            <Category titleText="En espéce" testx="hello" />
-            <Category titleText="Par chèque" testx="dagla" />
+          <View className="flex-row justify-center mt-3 ml-[88] ">
+            {/* <CategoryProduct titleText="En espéce" testx="hello" />
+            <CategoryProduct titleText="Par chèque" testx="dagla" /> */}
+            <CategoryProductsContainer items={methodofpayment} />
           </View>
         </View>
       </ScrollView>
       <View className="absolute inset-x-0 bottom-0">
-        <TotalOrder />
+        <TotalOrder buttonText="Valider" />
       </View>
     </View>
   );

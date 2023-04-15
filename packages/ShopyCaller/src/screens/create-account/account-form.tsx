@@ -95,7 +95,7 @@ export const AccountForm = ({}: Props) => {
       <Button
         variant="outline"
         label="S'enregistrer"
-        className="bg-CustomizedGreen-10 rounded-3xl"
+        className="bg-green-10 rounded-3xl"
         onPress={handleSubmit(onSubmit)}
       />
     </View>

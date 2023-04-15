@@ -4,7 +4,7 @@ import { Alert, Animated, PanResponder } from 'react-native';
 
 import { Text, TouchableOpacity, View } from '@/ui/core';
 
-const ProductCard = ({ product }: any) => {
+const ProductCard = ({ product, deleteOption }: any) => {
   const position = React.useRef(new Animated.Value(0)).current;
   const [productNumber, setProductNumber] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
@@ -86,12 +86,15 @@ const ProductCard = ({ product }: any) => {
     <>
       {isVisible && (
         <View className="relative h-28 my-2 justify-center">
-          <TouchableOpacity
-            className="w-12 h-24 bg-danger-100 justify-center items-center top-0 absolute rounded-2xl m-3 right-5"
-            onPress={disappear}
-          >
-            <FontAwesome5 name="trash-alt" size={24} color="#FF4848" />
-          </TouchableOpacity>
+          {deleteOption && (
+            <TouchableOpacity
+              className="w-12 h-24 bg-danger-100 justify-center items-center top-0 absolute rounded-2xl m-3 right-5"
+              onPress={disappear}
+            >
+              <FontAwesome5 name="trash-alt" size={24} color="#FF4848" />
+            </TouchableOpacity>
+          )}
+
           <Animated.View
             className="w-80 h-28  flex-row "
             style={[animatedStyle]}

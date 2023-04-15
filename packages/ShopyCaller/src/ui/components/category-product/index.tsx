@@ -5,7 +5,7 @@ import { Text, View } from '@/ui';
 
 import FootIcon from '../icons/foot-icon';
 
-export const Category = ({ titleText }: any) => {
+export const CategoryProduct = ({ CategoryProductItem }: any) => {
   const [isPressedParCheque, setIsPressed] = useState(false);
   const handelPressParCheque = () => {
     setIsPressed(!isPressedParCheque);
@@ -31,10 +31,11 @@ export const Category = ({ titleText }: any) => {
         <Text
           className={`text-black ${isPressedParCheque ? 'text-white' : ''}`}
         >
-          {titleText}
+          {/* {titleText} */}
+          {CategoryProductItem.name}
         </Text>
       </View>
     </TouchableWithoutFeedback>
   );
 };
-export default Category;
+export default CategoryProduct;

@@ -7,8 +7,9 @@ import type { SvgProps } from 'react-native-svg';
 
 import { Settings, Style } from '@/screens';
 import Cart from '@/screens/cart';
+import Category from '@/screens/category';
 import CreateAccount from '@/screens/create-account';
-import Order from '@/screens/order/order';
+import Order from '@/screens/order';
 import {
   Feed as FeedIcon,
   Settings as SettingsIcon,
@@ -25,6 +26,7 @@ type TabParamList = {
   FeedNavigator: undefined;
   Settings: undefined;
   Order: undefined;
+  Category: undefined;
 };
 
 type TabType = {
@@ -44,6 +46,7 @@ const tabsIcons: TabIconsType = {
   CreateAccount: (props: SvgProps) => <StyleIcon {...props} />,
   Cart: (props: SvgProps) => <StyleIcon {...props} />,
   Order: (props: SvgProps) => <StyleIcon {...props} />,
+  Category: (props: SvgProps) => <StyleIcon {...props} />,
   FeedNavigator: (props: SvgProps) => <FeedIcon {...props} />,
   Settings: (props: SvgProps) => <SettingsIcon {...props} />,
 };
@@ -73,6 +76,11 @@ const tabs: TabType[] = [
     name: 'Order',
     component: Order,
     label: 'Order',
+  },
+  {
+    name: 'Category',
+    component: Category,
+    label: 'Category',
   },
   {
     name: 'FeedNavigator',

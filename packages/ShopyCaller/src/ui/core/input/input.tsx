@@ -28,7 +28,7 @@ export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
   const borderColor = error
     ? 'border-danger-600'
     : isFocussed
-    ? 'border-CustomizedGreen-10'
+    ? 'border-green-10'
     : 'border-neutral-400';
 
   const bgColor = error ? 'bg-danger-50' : 'bg-neutral-200';
@@ -53,7 +53,7 @@ export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
           variant="md"
           className={`absolute left-4   ${
             value || isFocussed
-              ? 'top-0 text-CustomizedGreen-10 text-[12px]'
+              ? 'top-0 text-green-10 text-[12px]'
               : 'top-4 text-grey-10 text-[16px]'
           }`}
         >
