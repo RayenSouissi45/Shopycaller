@@ -1,6 +1,7 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Alert, Animated, PanResponder } from 'react-native';
+import { Image } from 'react-native';
 
 import { Text, TouchableOpacity, View } from '@/ui/core';
 
@@ -101,8 +102,20 @@ const ProductCard = ({ product, deleteOption }: any) => {
             {...panResponder.panHandlers}
           >
             <View className="w-80 h-28 flex-row mr-7">
-              <View className="w-28 bg-neutral-50 rounded-l-xl" />
-              <View className="bg-white rounded-r-xl">
+              {/* <View className="w-28 bg-neutral-50 rounded-l-xl" /> */}
+              <View className="w-28 bg-white rounded-l-xl">
+                <Image
+                  source={product.image}
+                  style={{
+                    flex: 1,
+                    width: '100%',
+                    borderTopLeftRadius: 10,
+                    borderBottomLeftRadius: 10,
+                  }}
+                />
+                {/* source={product.image} */}
+              </View>
+              <View className="bg-white rounded-r-xl pl-1">
                 <View>
                   <Text className="text-neutral-100 font-medium">
                     {product.name}

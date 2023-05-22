@@ -2,10 +2,13 @@ import { TouchableOpacity } from 'react-native';
 
 import { ScrollView, Text, View } from '@/ui';
 import CategoryProductsContainer from '@/ui/components/category-product-container';
+import FootIcon from '@/ui/components/icons/foot-icon';
 import OrderSearchIcon from '@/ui/components/icons/order-search-icon';
+import ParChequeIcon from '@/ui/components/icons/par-cheque-icon';
 import ProductCardsContainer from '@/ui/components/product-cards-container';
 import TotalOrder from '@/ui/components/total-order';
 import SearchInput from '@/ui/core/input/search-input';
+import RepairIcon from '@/ui/icons/repair-icon';
 
 const Order = () => {
   const products = [
@@ -14,35 +17,43 @@ const Order = () => {
       name: 'SVR masque product 1',
       price: 10.99,
       description: 'this is the description for product 1',
+      image: require('../../../assets/product1.png'),
     },
     {
       id: 2,
       name: 'Product 2',
       price: 19.99,
       description: 'this is the description for product 1',
+      image: require('../../../assets/product2.png'),
     },
     {
       id: 3,
       name: 'Product 3',
       price: 7.99,
       description: 'this is the description for product 1',
+      image: require('../../../assets/product3.png'),
     },
   ];
   const CategoryProductList = [
     {
       name: 'Visage',
+      icon: <FootIcon />,
     },
     {
       name: 'Peau',
+      icon: <ParChequeIcon />,
     },
     {
       name: 'Massage',
+      icon: <RepairIcon />,
     },
     {
       name: 'Repair',
+      icon: <FootIcon />,
     },
     {
       name: 'Name product 5',
+      icon: <FootIcon />,
     },
   ];
 

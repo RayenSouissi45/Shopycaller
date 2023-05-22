@@ -3,8 +3,6 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 import { Text, View } from '@/ui';
 
-import FootIcon from '../icons/foot-icon';
-
 export const CategoryProduct = ({ CategoryProductItem }: any) => {
   const [isPressedParCheque, setIsPressed] = useState(false);
   const handelPressParCheque = () => {
@@ -25,7 +23,8 @@ export const CategoryProduct = ({ CategoryProductItem }: any) => {
             isPressedParCheque ? 'bg-white' : ''
           }`}
         >
-          <FootIcon />
+          {/* <FootIcon /> */}
+          {CategoryProductItem.icon}
           {/*image of icon that is displayed will depend on the props that are passed to the component */}
         </View>
         <Text
